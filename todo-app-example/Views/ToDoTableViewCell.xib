@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-JD-sk2">
-                        <rect key="frame" x="18" y="9" width="300" height="20"/>
+                        <rect key="frame" x="18" y="9" width="237" height="20"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <nil key="highlightedColor"/>
@@ -30,19 +31,35 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="medium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ty-V7-b8J">
+                        <rect key="frame" x="265" y="12.5" width="50" height="13.5"/>
+                        <color key="backgroundColor" red="0.51372549020000002" green="0.75686274509999996" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="RN6-I4-oI0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="5Ty-V7-b8J" secondAttribute="trailing" constant="5" id="0xv-FG-RY5"/>
                     <constraint firstItem="XPn-JD-sk2" firstAttribute="leading" secondItem="R5Z-2l-fmI" secondAttribute="leadingMargin" constant="10" id="Stx-oD-1er"/>
                     <constraint firstItem="END-fW-i9Z" firstAttribute="leading" secondItem="XPn-JD-sk2" secondAttribute="leading" id="Tbf-iL-jFH"/>
+                    <constraint firstItem="5Ty-V7-b8J" firstAttribute="leading" secondItem="XPn-JD-sk2" secondAttribute="trailing" constant="10" id="Wvv-r5-7ng"/>
                     <constraint firstItem="XPn-JD-sk2" firstAttribute="top" secondItem="R5Z-2l-fmI" secondAttribute="top" constant="8.75" id="fQQ-1K-H9z"/>
-                    <constraint firstAttribute="trailing" secondItem="XPn-JD-sk2" secondAttribute="trailingMargin" constant="10" id="lit-Cl-nKy"/>
                     <constraint firstItem="END-fW-i9Z" firstAttribute="top" secondItem="XPn-JD-sk2" secondAttribute="bottom" constant="5" id="xg7-4z-xgu"/>
+                    <constraint firstItem="5Ty-V7-b8J" firstAttribute="centerY" secondItem="XPn-JD-sk2" secondAttribute="centerY" id="xzv-kr-7QR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="END-fW-i9Z" id="1LB-ub-z0L"/>
                 <outlet property="notePreviewLabel" destination="XPn-JD-sk2" id="3cr-cO-oML"/>
+                <outlet property="priorityLabel" destination="5Ty-V7-b8J" id="qJ8-zS-U9V"/>
             </connections>
         </tableViewCell>
     </objects>
