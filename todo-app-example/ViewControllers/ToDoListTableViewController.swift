@@ -199,9 +199,13 @@ extension ToDoListTableViewController: UISearchResultsUpdating {
 
 extension ToDoListTableViewController: ToDoViewControllerDelegate {
     func deleteToDoTapped(toDo: ToDo) {
-        guard let index = filteredToDos.index(of: toDo) else {
+        guard let index = filteredToDos.index(where: { (ToDo) -> Bool in
+            ToDo.toDoId == toDo.toDoId
+        }) else {
             return
         }
+        toDo.delete()
         filteredToDos.remove(at: index)
+        self.tableView.reloadData()
     }
 }

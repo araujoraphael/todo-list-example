@@ -60,8 +60,13 @@ class ToDo: Object {
     
     func delete() {
         let realm = try! Realm()
-        try! realm.write {
-            realm.delete(self)
+        let toDo = realm.objects(ToDo.self).first { (td) -> Bool in
+            td.toDoId == self.toDoId
+        }
+        if let td = toDo {
+            try! realm.write {
+                realm.delete(td)
+            }
         }
     }
 }
